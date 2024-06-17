@@ -37,6 +37,31 @@ body {
     color: #f1f1f1;
 }
 
+
+dialog{
+    height: 25vh;
+    width: 20vw;
+    padding: 15px;    
+    left: 40%;
+    top: 30%;
+    text-align: center;
+}
+
+dialog .winner-display {
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+
+dialog .restart-game {
+    width: 50%;
+    font-size: 1rem;
+    padding: 5px 10px;
+    margin: 20px 0;
+}
+
+
+
+
 .game-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

@@ -1,5 +1,7 @@
 const cases = Array.from(document.querySelectorAll(".case"));
-
+const modal = document.querySelector("dialog");
+const messageDisplay = document.querySelector(".winner-display");
+const restartBtn = document.querySelector(".restart-game");
 class Player {
     constructor(name, signe) {
         this.name = name;
@@ -77,6 +79,7 @@ const player1 = new Player("ahmed", 'X');
 const player2 = new Player("walid", 'O');
 const game = new Game(player1, player2);
 
+
 cases.forEach((cell, index) => {
     cell.addEventListener('click', () => {
         const caseSet = game.setCase(index);
@@ -84,16 +87,21 @@ cases.forEach((cell, index) => {
             const winner = game.checkWin();
             const draw = game.checkDraw();
             if (winner) {
-                setTimeout(() => {
-                    game.resetGame();
-                }, 2000);
+                messageDisplay.textContent = `le joueur ${winner.name} a gagné`;
+                modal.showModal();
+                
             }
             if(draw){
-                setTimeout(() => {
-                    game.resetGame();
-                }, 2000);
+                messageDisplay.textContent = `le partie est null`;
+                modal.showModal();
+                
             }
 
         }
     });
 });
+restartBtn.addEventListener("click",function(){
+    modal.close();
+    game.resetGame();
+});
+
