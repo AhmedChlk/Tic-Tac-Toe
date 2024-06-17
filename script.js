@@ -86,12 +86,12 @@ cases.forEach((cell, index) => {
             if (winner) {
                 setTimeout(() => {
                     game.resetGame();
-                }, 3000);
+                }, 2000);
             }
             if(draw){
                 setTimeout(() => {
                     game.resetGame();
-                }, 3000);
+                }, 2000);
             }
 
         }
